@@ -17,7 +17,7 @@ def icdm_runner(config, save):
 
 
 def get_runner(method: str):
-    if 'igcdm' in method:
+    if 'icdm' in method:
         return icdm_runner
     elif 'kancd' in method:
         return kancd_runner
@@ -64,11 +64,11 @@ def icdm_re_ind_runner(config, save):
 
 
 def get_ind_runner(method: str):
-    if 'igcdm' in method:
-        if 'igcdm-re' not in method:
-            return igcdm_ind_runner
+    if 'gcdm' in method:
+        if 'icdm-re' not in method:
+            return icdm_ind_runner
         else:
-            return igcdm_re_ind_runner
+            return icdm_re_ind_runner
     elif 'kancd-re' in method:
         return kancd_re_ind_runner
     elif 'kancd-pos' in method:

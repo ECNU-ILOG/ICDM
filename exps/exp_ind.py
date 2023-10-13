@@ -12,9 +12,9 @@ import pickle
 current_path = os.path.abspath('.')
 tmp = os.path.dirname(current_path)
 path_CDM_ILOG = os.path.dirname(tmp)
-path_CDM_IGCDM_runner = path_CDM_ILOG + '\\runners\\IGCDM'
+path_CDM_ICDM_runner = path_CDM_ILOG + '\\runners\\ICDM'
 sys.path.insert(0, path_CDM_ILOG)
-sys.path.insert(0, path_CDM_IGCDM_runner)
+sys.path.insert(0, path_CDM_ICDM_runner)
 from runners.ICDM.utils import epochs_dict, build_graph4CE, build_graph4SE, build_graph4SC
 from runners.ICDM.cdm_runners import get_ind_runner
 from data.data_params_dict import data_params

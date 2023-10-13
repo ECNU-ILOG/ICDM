@@ -15,13 +15,13 @@ path_CDM_ILOG = os.path.dirname(tmp)
 path_CDM_IGCDM_runner = path_CDM_ILOG + '\\runners\\IGCDM'
 sys.path.insert(0, path_CDM_ILOG)
 sys.path.insert(0, path_CDM_IGCDM_runner)
-from runners.IGCDM.utils import epochs_dict, build_graph4CE, build_graph4SE, build_graph4SC
-from runners.IGCDM.cdm_runners import get_ind_runner
+from runners.ICDM.utils import epochs_dict, build_graph4CE, build_graph4SE, build_graph4SC
+from runners.ICDM.cdm_runners import get_ind_runner
 from data.data_params_dict import data_params
 from runners.commonutils.util import set_seeds
 from runners.commonutils.datautils import get_split_by_student, get_split_by_student_acr, get_split_inductive
 import argparse
-from runners.IGCDM.utils import save
+from runners.ICDM.utils import save
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--method', default='igcdm', type=str,

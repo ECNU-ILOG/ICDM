@@ -13,7 +13,7 @@ from tqdm import tqdm
 import warnings
 from runners.commonutils.datautils import transform, get_doa_function, get_r_matrix, get_group_acc
 from runners.commonutils.util import get_number_of_params, NoneNegClipper
-from runners.IGCDM.utils import l2_loss, dgl2tensor, concept_distill, get_subgraph
+from runners.ICDM.utils import l2_loss, dgl2tensor, concept_distill, get_subgraph
 from dgl.base import DGLError
 from dgl import DropEdge
 from dgl.nn.pytorch import GATConv, GATv2Conv
@@ -609,11 +609,11 @@ class IGNet(nn.Module):
                 layer.apply(clipper)
 
 
-class IGCDM(CDM):
+class ICDM(CDM):
     def __init__(self, stu_num, prob_num, know_num, dim=64, device='cuda:0', graph=None, gcn_layers=3, agg_type='mean',
                  weight_reg=0.05, wandb=True, exist_idx=None, new_index=None, mode='train', cdm_type='lightgcn', khop=2,
                  ab='drop', d_1=0.1, d_2=0.2):
-        super(IGCDM, self).__init__()
+        super(ICDM, self).__init__()
         self.net = None
         self.know_num = know_num
         self.prob_num = prob_num

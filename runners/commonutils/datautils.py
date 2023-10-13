@@ -108,7 +108,7 @@ def get_group_acc(know_num):
 #     new_stu_idx = [int(i) for i in new_stu_idx]
 #     return np_train_full, exist_train, np_test, exist_stu_idx, new_stu_idx
 def get_split_by_student(datatype: str, new_student_ratio=0.2):
-    data = pd.read_csv('../../data/{}/{}TotalData.csv'.format(datatype, datatype), header=None,
+    data = pd.read_csv('../data/{}/{}TotalData.csv'.format(datatype, datatype), header=None,
                        names=['stu_id', 'prob_id', 'score'])
     stu_num = data_params[datatype]['stu_num']
     stu_idx = [i for i in range(stu_num)]
@@ -126,7 +126,7 @@ def get_split_by_student(datatype: str, new_student_ratio=0.2):
 
 
 def get_split_inductive(datatype: str, test_size=0.2, new_student_ratio=0.2, seed=0):
-    pd_data = pd.read_csv('../../data/{}/{}TotalData.csv'.format(datatype, datatype), header=None,
+    pd_data = pd.read_csv('../data/{}/{}TotalData.csv'.format(datatype, datatype), header=None,
                           names=['stu_id', 'prob_id', 'score'])
     pd_train, pd_test = train_test_split(pd_data, test_size=test_size, random_state=seed)
     stu_num = data_params[datatype]['stu_num']

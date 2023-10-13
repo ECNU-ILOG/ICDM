@@ -1,6 +1,5 @@
 from method.ICDM.icdm import ICDM
 from method.ICDM.icdm_ind import ICDM as ICDMIND
-from runners.commonutils.commonrunners import *
 from runners.ICDM.utils import save
 import numpy as np
 
@@ -19,18 +18,6 @@ def icdm_runner(config, save):
 def get_runner(method: str):
     if 'icdm' in method:
         return icdm_runner
-    elif 'kancd' in method:
-        return kancd_runner
-    elif 'ncdm' in method:
-        return ncdm_runner
-    elif 'rcd' in method:
-        return rcd_runner
-    elif 'mirt' in method:
-        return mirt_runner
-    elif 'kscd' in method:
-        return kscd_runner
-    elif 'dina' in method:
-        return dina_runner
     else:
         raise ValueError('This method is currently not supported.')
 
@@ -64,18 +51,10 @@ def icdm_re_ind_runner(config, save):
 
 
 def get_ind_runner(method: str):
-    if 'gcdm' in method:
+    if 'icdm' in method:
         if 'icdm-re' not in method:
             return icdm_ind_runner
         else:
             return icdm_re_ind_runner
-    elif 'kancd-re' in method:
-        return kancd_re_ind_runner
-    elif 'kancd-pos' in method:
-        return kancd_pos_ind_runner
-    elif 'kancd-closest' in method:
-        return kancd_closest_ind_runner
-    elif 'random' in method:
-        return random_ind_runner
     else:
         raise ValueError('This method is currently not supported.')

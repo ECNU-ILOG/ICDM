@@ -13,6 +13,7 @@ current_path = os.path.abspath('.')
 tmp = os.path.dirname(current_path)
 path_CDM_ILOG = os.path.dirname(tmp)
 path_CDM_ICDM_runner = path_CDM_ILOG + '\\runners\\ICDM'
+sys.path.insert(0, tmp)
 sys.path.insert(0, path_CDM_ILOG)
 sys.path.insert(0, path_CDM_ICDM_runner)
 from runners.ICDM.utils import epochs_dict, build_graph4CE, build_graph4SE, build_graph4SC
@@ -24,7 +25,7 @@ import argparse
 from runners.ICDM.utils import save
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--method', default='igcdm', type=str,
+parser.add_argument('--method', default='icdm', type=str,
                     help='A Lightweight Graph-based Cognitive Diagnosis Framework', required=True)
 parser.add_argument('--datatype', default='junyi', type=str, help='benchmark', required=True)
 parser.add_argument('--test_size', default=0.2, type=float, help='test size of benchmark', required=True)
@@ -49,7 +50,7 @@ parser.add_argument('--d_1', type=float, default=0.1)
 parser.add_argument('--d_2', type=float, default=0.2)
 config_dict = vars(parser.parse_args())
 
-if 'igcdm' in config_dict['method'] or 'imcgae' in config_dict['method']:
+if 'icdm' in config_dict['method'] or 'imcgae' in config_dict['method']:
     name = f"{config_dict['method']}-{config_dict['cdm_type']}-{config_dict['datatype']}-seed{config_dict['seed']}"
     config_dict['method'] = f"{config_dict['method']}-{config_dict['cdm_type']}"
     tags = [config_dict['method'], config_dict['datatype'], str(config_dict['seed'])]
@@ -64,11 +65,11 @@ if config_dict.get('epoch', None) is None:
     config_dict['epoch'] = epochs_dict[datatype][method]
 if config_dict.get('batch_size', None) is None:
     config_dict['batch_size'] = data_params[datatype]['batch_size']
-if 'igcdm' in method:
+if 'icdm' in method:
     if config_dict.get('weight_reg') is None:
         config_dict['weight_reg'] = 1e-3
 pprint(config_dict)
-run = wb.init(project="IGCDM", name=name,
+run = wb.init(project="ICDM", name=name,
               tags=tags,
               config=config_dict)
 config_dict['id'] = run.id
@@ -87,7 +88,7 @@ def main(config):
         'know_num': data_params[datatype]['know_num'],
     })
     set_seeds(config['seed'])
-    q_np = pd.read_csv('../../data/{}/q.csv'.format(datatype),
+    q_np = pd.read_csv('../data/{}/q.csv'.format(datatype),
                        header=None).to_numpy()
     q_tensor = torch.tensor(q_np).to(device)
     exp_type = config['exp_type']
@@ -116,7 +117,7 @@ def main(config):
     config['q'] = q_tensor
     config['exist_idx'] = exist_idx
     config['new_idx'] = new_idx
-    if 'igcdm-re' not in method:
+    if 'icdm-re' not in method:
         right_old, wrong_old = build_graph4SE(config, mode='ind_train')
         right_eval, wrong_eval = build_graph4SE(config, mode='ind_eval')
         graph_dict = {

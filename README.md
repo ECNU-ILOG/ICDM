@@ -1,6 +1,12 @@
 # Inductive Cognitive Diagnosis Model (ICDM)
 > Implementation of Inductive Cognitive Diagnosis for Fast Student Learning\\ in Web-Based Online Intelligent Education Systems
 
+
+
+> cd exps
+
+
+
 ## Transductive Scenario
 
 ```shell

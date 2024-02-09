@@ -296,7 +296,7 @@ class SAGENet(nn.Module):
 class IGNet(nn.Module):
     def __init__(self, stu_num, prob_num, know_num, dim, graph, norm_adj=None, inter_layers=3, hidden_dim=512,
                  device='cuda',
-                 gcnlayers=3, agg_type='mean', cdm_type='lightgcn', khop=2):
+                 gcnlayers=3, agg_type='mean', cdm_type='glif', khop=2):
         super().__init__()
         self.stu_num = stu_num
         self.prob_num = prob_num
@@ -412,7 +412,7 @@ class IGNet(nn.Module):
         def irf(theta, a, b, D=1.702):
             return torch.sigmoid(torch.mean(D * a * (theta - b), dim=1)).to(self.device).view(-1)
 
-        if self.cdm_type == 'lightgcn':
+        if self.cdm_type == 'glif':
             out = self.compute(emb)
             S_forward, E_forward, C_forward = self.transfer_stu_layer(
                 out[:self.stu_num]), self.transfer_exer_layer(out[self.stu_num:]), self.transfer_concept_layer(
@@ -500,7 +500,7 @@ class IGNet(nn.Module):
         S_forward = self.attn_S.forward(
             [S_E_info_right[:self.stu_num], S_E_info_wrong[:self.stu_num], S_C_info[:self.stu_num]])
 
-        if self.cdm_type == 'lightgcn':
+        if self.cdm_type == 'glif':
             emb = torch.cat([S_forward, E_forward]).to(device)
             out = self.compute(emb)
             S_forward, E_forward, C_forward = self.transfer_stu_layer(
@@ -523,7 +523,7 @@ class IGNet(nn.Module):
 
 class ICDM(CDM):
     def __init__(self, stu_num, prob_num, know_num, dim=64, device='cuda:0', graph=None, gcn_layers=3, agg_type='mean',
-                 weight_reg=0.05, wandb=True, cdm_type='lightgcn', khop=2, exist_idx=None, new_idx=None):
+                 weight_reg=0.05, wandb=True, cdm_type='glif', khop=2, exist_idx=None, new_idx=None):
         super(ICDM, self).__init__()
         self.net = None
         self.know_num = know_num

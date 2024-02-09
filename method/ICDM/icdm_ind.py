@@ -298,7 +298,7 @@ class IGNet(nn.Module):
     def __init__(self, stu_num, prob_num, know_num, dim, graph, norm_adj_full=None, norm_adj_train=None, inter_layers=3,
                  hidden_dim=512,
                  device='cuda',
-                 khop=2, gcnlayers=3, agg_type='mean', exist_idx=None, new_idx=None, cdm_type='lightgcn', ab='drop',
+                 khop=2, gcnlayers=3, agg_type='mean', exist_idx=None, new_idx=None, cdm_type='glif', ab='drop',
                  d_1=0.1, d_2=0.2):
         super().__init__()
         self.stu_num = stu_num
@@ -475,7 +475,7 @@ class IGNet(nn.Module):
         def irf(theta, a, b, D=1.702):
             return torch.sigmoid(torch.mean(D * a * (theta - b), dim=1)).to(self.device).view(-1)
 
-        if self.cdm_type == 'lightgcn':
+        if self.cdm_type == 'glif':
             if mode == 'train':
                 out = self.compute(self.norm_adj_train, emb)
             else:
@@ -581,7 +581,7 @@ class IGNet(nn.Module):
 
         emb = torch.cat([S_forward, E_forward]).to(device)
 
-        if self.cdm_type == 'lightgcn':
+        if self.cdm_type == 'glif':
             if mode == 'eval':
                 out = self.compute(self.norm_adj_full, emb)
             else:
@@ -611,7 +611,7 @@ class IGNet(nn.Module):
 
 class ICDM(CDM):
     def __init__(self, stu_num, prob_num, know_num, dim=64, device='cuda:0', graph=None, gcn_layers=3, agg_type='mean',
-                 weight_reg=0.05, wandb=True, exist_idx=None, new_index=None, mode='train', cdm_type='lightgcn', khop=2,
+                 weight_reg=0.05, wandb=True, exist_idx=None, new_index=None, mode='train', cdm_type='glif', khop=2,
                  ab='drop', d_1=0.1, d_2=0.2):
         super(ICDM, self).__init__()
         self.net = None

@@ -6,7 +6,7 @@
 
 ## ICDM-*WWW2024*
 
-We provide `ICDM-WWW2024.pdf`  in "*<u>**method/QCCDM/papers**</u>*" directory.
+We provide `ICDM-WWW2024.pdf`  in "*<u>**method/ICDM/papers**</u>*" directory.
 
 We provide comprehensive instructions on how to run ICDM in the ***<u>"exps/ICDM"</u>*** directory. If you're interested, please navigate to the exps/ICDM directory for more information.
 

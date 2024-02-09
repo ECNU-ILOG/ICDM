@@ -1,18 +1,12 @@
-# :sparkles: :sparkles: <u>ICDM</u> :sparkles::sparkles:
+# :sparkles: :sparkles: <u>ICDM</u>-WWW2024 :sparkles::sparkles:
 
 :smile_cat: Welcome to **ICDM, this is a comprehensive repository specializing in ***Inductive Cognitive Diagnosis for Fast Student Learning\\ in Web-Based Online Intelligent Education Systems***.
 
-------
-
-## ICDM-*WWW2024*
+## 
 
 We provide `ICDM-WWW2024.pdf`  in "*<u>**papers**</u>*" directory.
 
 We provide comprehensive instructions on how to run ICDM in the ***<u>"exps/ICDM"</u>*** directory. If you're interested, please navigate to the exps/ICDM directory for more information.
-
-
-
-
 
 # Requirements:heavy_exclamation_mark:
 
@@ -32,13 +26,7 @@ tqdm==4.65.0
 wandb==0.15.2
 ```
 
-------
-
-> Implementation of Inductive Cognitive Diagnosis for Fast Student Learning in Web-Based Online Intelligent Education Systems
-
 > cd exps
-
-
 
 ## Transductive Scenario
 

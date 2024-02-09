@@ -30,7 +30,9 @@ python exp_ind.py  --exp_type=ind --method=icdm --datatype=EdNet-1 --test_size=0
 
 
 
+# Experiment :clap:
 
+<u>We utilize **wandb**, a practical and effective package for visualizing our results. However, if you prefer not to use it, it can be easily disabled.</u> https://wandb.ai/ :scroll:
 
 # Reference :thought_balloon:
 

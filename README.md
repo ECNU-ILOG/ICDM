@@ -12,8 +12,6 @@ We provide comprehensive instructions on how to run ICDM in the ***<u>"exps/ICDM
 
 ```python
 dgl==1.1.2+cu116
-dgl_cu111==0.6.1
-EduCDM==0.0.13
 EduCDM==0.0.13
 joblib==1.2.0
 networkx==2.6.3

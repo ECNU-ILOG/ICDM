@@ -1,11 +1,18 @@
-# Inductive Cognitive Diagnosis Model (ICDM)
+# :sparkles: :sparkles: <u>ICDM</u> :sparkles::sparkles:
+
+:smile_cat: Welcome to **ICDM, this is a comprehensive repository specializing in ***Inductive Cognitive Diagnosis for Fast Student Learning\\ in Web-Based Online Intelligent Education Systems***.
+
+------
+
+## ICDM-*WWW2024*
+
+We provide `ICDM-WWW2024.pdf`  in "*<u>**method/QCCDM/papers**</u>*" directory.
+
+We provide comprehensive instructions on how to run ICDM in the ***<u>"exps/ICDM"</u>*** directory. If you're interested, please navigate to the exps/ICDM directory for more information.
+
 > Implementation of Inductive Cognitive Diagnosis for Fast Student Learning\\ in Web-Based Online Intelligent Education Systems
 
-
-
 > cd exps
-
-
 
 ## Transductive Scenario
 

@@ -8,7 +8,7 @@ We provide `ICDM-WWW2024.pdf`  in "*<u>**papers**</u>*" directory.
 
 We provide comprehensive instructions on how to run ICDM in the ***<u>"exps/ICDM"</u>*** directory. If you're interested, please navigate to the exps/ICDM directory for more information.
 
-# Requirements:heavy_plus_sign:
+# Requirements
 
 ```python
 dgl==1.1.2+cu116

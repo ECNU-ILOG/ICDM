@@ -51,7 +51,7 @@ Shuo Liu, Junhao Shen, Hong Qian, Aimin Zhou "Inductive Cognitive Diagnosis for 
 ```
 @inproceedings{liu2024www,
 author = {Shuo Liu, Junhao Shen, Hong Qian, Aimin Zhou},
-booktitle = {Proceedings of the The Web Conference 2024},
+booktitle = {Proceedings of the ACM Web Conference 2024},
 title = {Inductive Cognitive Diagnosis for Fast Student Learning in Web-Based Online Intelligent Education Systems},
 year = {2024},
 address={Singapore}

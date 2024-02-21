@@ -44,7 +44,7 @@ python exp_ind.py  --exp_type=ind --method=icdm --datatype=EdNet-1 --test_size=0
 
 # Reference :thought_balloon:
 
-Shuo Liu, Junhao Shen, Hong Qian, Aimin Zhou "Inductive Cognitive Diagnosis for Fast Student Learning in Web-Based Online Intelligent Education Systems." In Proceedings of the The Web Conference, 2024.
+Shuo Liu, Junhao Shen, Hong Qian, Aimin Zhou "Inductive Cognitive Diagnosis for Fast Student Learning in Web-Based Online Intelligent Education Systems." In Proceedings of the ACM Web Conference, 2024.
 
 ## Bibtex
 

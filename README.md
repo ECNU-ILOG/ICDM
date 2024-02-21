@@ -2,9 +2,9 @@
 
 :smile_cat: Welcome to ICDM, this is a comprehensive repository specializing in ***Inductive Cognitive Diagnosis for Fast Student Learning in Web-Based Online Intelligent Education Systems*** published in WWW 2024.
 
-We provide comprehensive instructions on how to run ICDM in the ***<u>"exps/ICDM"</u>*** directory. If you're interested, please navigate to the exps/ICDM directory for more information.
+We provide comprehensive instructions on how to run ICDM in the ***<u>"exps"</u>*** directory. If you're interested, please navigate to the exps directory for more information.
 
-# Requirements
+# Requirements	
 
 ```python
 dgl==1.1.2+cu116

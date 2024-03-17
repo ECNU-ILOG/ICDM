@@ -13,7 +13,7 @@ joblib==1.2.0
 networkx==2.6.3
 numpy==1.23.5
 pandas==1.5.2
-scikit_learn==1.2.2
+scikit_learn==1.2.3
 scipy==1.12.0
 torch==1.13.1+cu117
 tqdm==4.65.0
@@ -30,7 +30,7 @@ python exp.py --exp_type=cdm --method=icdm --datatype=EdNet-1 --test_size=0.2 --
 
 
 
-## Inductive Scenario
+## Inductive Scenario 
 
 ```shell
 python exp_ind.py  --exp_type=ind --method=icdm --datatype=EdNet-1 --test_size=0.2 --seed=0 --dim=64 --epoch=5 --device=cuda:0 --gcnlayers=3 --lr=2e-3 --agg_type=mean --mode=train --cdm_type=glif --new_ratio=0.2 --khop=3
